@@ -47,7 +47,7 @@ fi
 # blue arrow
 BLUE_ARROW="$(printf "%b->%b" "${BLU}" "${WHT}")"
 # sets version
-RAMFETCH_VER="v1.0.1"
+RAMFETCH_VER="v1.0.2"
 
 # help and version
 
@@ -58,7 +58,6 @@ $BLUE_ARROW ramfetch version $RAMFETCH_VER
 Usage:
     --help (or -h for short) -- shows this help
     --version (or -v for short) -- shows version
-
 EOF
 exit 0
 fi
@@ -67,7 +66,6 @@ if [ "$*" = "--version" ] || [ "$*" = "-v" ]; then
     cat <<EOF
 $BLUE_ARROW ramfetch version $RAMFETCH_VER. made by gentoo-btw
 https://github.com/gentoo-btw/ramfetch
-
 EOF
 exit 0
 fi
@@ -93,55 +91,55 @@ fi
 
 while read -r REPLY; do
     case "${REPLY}" in
-        (MemTotal:*)        memtotal=$(echo "$REPLY" | sed 's/[^0-9]*\([0-9]*\) kB/\1/' | numfmt --to=iec-i --from-unit=1024 --suffix=B --format="%9.2f" --invalid='ignore') ;;
-        (MemFree:*)         memfree=$(echo "$REPLY" | sed 's/[^0-9]*\([0-9]*\) kB/\1/' | numfmt --to=iec-i --from-unit=1024 --suffix=B --format="%9.2f" --invalid='ignore') ;;
-        (MemAvailable:*)    memavailable=$(echo "$REPLY" | sed 's/[^0-9]*\([0-9]*\) kB/\1/' | numfmt --to=iec-i --from-unit=1024 --suffix=B --format="%9.2f" --invalid='ignore') ;;
-        (HugePages_Free:*)  hugepg_free=$(echo "$REPLY" | sed 's/[^0-9]*\([0-9]*\)/\1/' | numfmt --to=iec-i --from-unit=1024 --suffix=B --format="%9.2f" --invalid='ignore') ;;
-        (HugePages_Total:*) hugepg_total=$(echo "$REPLY" | sed 's/[^0-9]*\([0-9]*\)/\1/' | numfmt --to=iec-i --from-unit=1024  --suffix=B --format="%9.2f" --invalid='ignore') ;;
-        (Buffers:*)         buffers=$(echo "$REPLY" | sed 's/[^0-9]*\([0-9]*\) kB/\1/' | numfmt --to=iec-i --from-unit=1024  --suffix=B --format="%9.2f" --invalid='ignore') ;;
-        (Cached:*)          cached=$(echo "$REPLY" | sed 's/[^0-9]*\([0-9]*\) kB/\1/' | numfmt --to=iec-i --from-unit=1024 --suffix=B --format="%9.2f" --invalid='ignore') ;;
-        (SwapTotal:*)       swaptotal=$(echo "$REPLY" | sed 's/[^0-9]*\([0-9]*\) kB/\1/' | numfmt --to=iec-i --from-unit=1024 --suffix=B --format="%9.2f" --invalid='ignore') ;;
-        (SwapFree:*)        swapfree=$(echo "$REPLY" | sed 's/[^0-9]*\([0-9]*\) kB/\1/' | numfmt --to=iec-i --from-unit=1024  --suffix=B --format="%9.2f" --invalid='ignore') ;;
-        (Zswap:*)           zswap=$(echo "$REPLY" | sed 's/[^0-9]*\([0-9]*\) kB/\1/' | numfmt --to=iec-i --from-unit=1024  --suffix=B --format="%9.2f" --invalid='ignore') ;;
-        (Zswapped:*)        zswapped=$(echo "$REPLY" | sed 's/[^0-9]*\([0-9]*\) kB/\1/' | numfmt --to=iec-i --from-unit=1024 --suffix=B --format="%9.2f" --invalid='ignore') ;;
-        (SwapCached:*)      swapcached=$(echo "$REPLY" | sed 's/[^0-9]*\([0-9]*\) kB/\1/' | numfmt --to=iec-i --from-unit=1024 --suffix=B --format="%9.2f" --invalid='ignore') ;;
-        (Dirty:*)           dirty=$(echo "$REPLY" | sed 's/[^0-9]*\([0-9]*\) kB/\1/' | numfmt --to=iec-i --from-unit=1024 --suffix=B --format="%9.2f" --invalid='ignore') ;;
-        (KernelStack:*)     kernel_stack=$(echo "$REPLY" | sed 's/[^0-9]*\([0-9]*\) kB/\1/' | numfmt --to=iec-i --from-unit=1024  --suffix=B --format="%9.2f" --invalid='ignore') ;;
-        (Percpu:*)          per_cpu=$(echo "$REPLY" | sed 's/[^0-9]*\([0-9]*\) kB/\1/' | numfmt --to=iec-i --from-unit=1024 --suffix=B --format="%9.2f" --invalid='ignore') ;;
+        (MemTotal:*)        MEM_TOTAL=$(printf "$REPLY" | sed 's/[^0-9]*\([0-9]*\) kB/\1/' | numfmt --to=iec-i --from-unit=1024 --suffix=B --format="%9.2f" --invalid='ignore') ;;
+        (MemFree:*)         MEM_FREE=$(printf "$REPLY" | sed 's/[^0-9]*\([0-9]*\) kB/\1/' | numfmt --to=iec-i --from-unit=1024 --suffix=B --format="%9.2f" --invalid='ignore') ;;
+        (MemAvailable:*)    MEM_AVAILABLE=$(printf "$REPLY" | sed 's/[^0-9]*\([0-9]*\) kB/\1/' | numfmt --to=iec-i --from-unit=1024 --suffix=B --format="%9.2f" --invalid='ignore') ;;
+        (HugePages_Free:*)  HUGEPAGES_FREE=$(printf "$REPLY" | sed 's/[^0-9]*\([0-9]*\)/\1/' | numfmt --to=iec-i --from-unit=1024 --suffix=B --format="%9.2f" --invalid='ignore') ;;
+        (HugePages_Total:*) HUGEPAGES_TOTAL=$(printf "$REPLY" | sed 's/[^0-9]*\([0-9]*\)/\1/' | numfmt --to=iec-i --from-unit=1024  --suffix=B --format="%9.2f" --invalid='ignore') ;;
+        (Buffers:*)         BUFFERS=$(printf "$REPLY" | sed 's/[^0-9]*\([0-9]*\) kB/\1/' | numfmt --to=iec-i --from-unit=1024  --suffix=B --format="%9.2f" --invalid='ignore') ;;
+        (Cached:*)          CACHED=$(printf "$REPLY" | sed 's/[^0-9]*\([0-9]*\) kB/\1/' | numfmt --to=iec-i --from-unit=1024 --suffix=B --format="%9.2f" --invalid='ignore') ;;
+        (SwapTotal:*)       SWAP_TOTAL=$(printf "$REPLY" | sed 's/[^0-9]*\([0-9]*\) kB/\1/' | numfmt --to=iec-i --from-unit=1024 --suffix=B --format="%9.2f" --invalid='ignore') ;;
+        (SwapFree:*)        SWAP_FREE=$(printf "$REPLY" | sed 's/[^0-9]*\([0-9]*\) kB/\1/' | numfmt --to=iec-i --from-unit=1024  --suffix=B --format="%9.2f" --invalid='ignore') ;;
+        (Zswap:*)           ZSWAP=$(printf "$REPLY" | sed 's/[^0-9]*\([0-9]*\) kB/\1/' | numfmt --to=iec-i --from-unit=1024  --suffix=B --format="%9.2f" --invalid='ignore') ;;
+        (Zswapped:*)        ZSWAPPED=$(printf "$REPLY" | sed 's/[^0-9]*\([0-9]*\) kB/\1/' | numfmt --to=iec-i --from-unit=1024 --suffix=B --format="%9.2f" --invalid='ignore') ;;
+        (SwapCached:*)      SWAP_CACHED=$(printf "$REPLY" | sed 's/[^0-9]*\([0-9]*\) kB/\1/' | numfmt --to=iec-i --from-unit=1024 --suffix=B --format="%9.2f" --invalid='ignore') ;;
+        (Dirty:*)           DIRTY=$(printf "$REPLY" | sed 's/[^0-9]*\([0-9]*\) kB/\1/' | numfmt --to=iec-i --from-unit=1024 --suffix=B --format="%9.2f" --invalid='ignore') ;;
+        (KernelStack:*)     KERNEL_STACK=$(printf "$REPLY" | sed 's/[^0-9]*\([0-9]*\) kB/\1/' | numfmt --to=iec-i --from-unit=1024  --suffix=B --format="%9.2f" --invalid='ignore') ;;
+        (Percpu:*)          PER_CPU=$(printf "$REPLY" | sed 's/[^0-9]*\([0-9]*\) kB/\1/' | numfmt --to=iec-i --from-unit=1024 --suffix=B --format="%9.2f" --invalid='ignore') ;;
     esac
 done < /proc/meminfo
 
 # colorblocks/hostname, and the green arrow
 GRN_ARROW="$(printf "%b->%b" "${GRN}" "${WHT}")"
 HOSTNAME="$(hostname)"
-host_user_len=$(echo ${#HOSTNAME} + ${#USER} + 1 | bc)
-host_user="$(printf "%b%s%b%c%b%s%b" "${GRN}" "$USER" "${WHT}" "@" "${YEL}" "$HOSTNAME" "${WHT}")"
-colorblocks="$(printf "%b%s%b%s%b%s%b%s%b%s%b%s%b%s%b%s%b" "${BLK}" "███" "${RED}" "███" "${GRN}" "███" "${BLU}" "███" "${YEL}" "███" "${PURP}" "███" "${CYN}" "███" "${WHT}" "███" "${WHT}")"
+HOST_AND_USER_LEN=$(echo ${#HOSTNAME} + ${#USER} + 1 | bc)
+HOST_AND_USER="$(printf "%b%s%b%c%b%s%b" "${GRN}" "$USER" "${WHT}" "@" "${YEL}" "$HOSTNAME" "${WHT}")"
+COLORBLOCKS="$(printf "%b%s%b%s%b%s%b%s%b%s%b%s%b%s%b%s%b" "${BLK}" "███" "${RED}" "███" "${GRN}" "███" "${BLU}" "███" "${YEL}" "███" "${PURP}" "███" "${CYN}" "███" "${WHT}" "███" "${WHT}")"
 # for ascii logo
-yellowpart="$(printf "%b" "${YEL}")"
-greenpart="$(printf "%b" "${GRN}")"
-end="$(printf "%b" "${WHT}")"
+YELLOW_PART="$(printf "%b" "${YEL}")"
+GREEN_PART="$(printf "%b" "${GRN}")"
+END="$(printf "%b" "${WHT}")"
 # output
 cat <<EOF
 
-$greenpart   ████████████████████████████     $host_user
-$greenpart ████████████████████████████████$end   $(printf '%0.s-' $(seq 1 "$host_user_len"))
-$greenpart ████      ████      ███      ███$end   RAM Total $GRN_ARROW $(printf "\t") ${memtotal:-null}
-$greenpart ████      ████      ███      ███$end   RAM Free $GRN_ARROW $(printf "\t") ${memfree:-null}
-$greenpart ████      ████      ███      ███$end   RAM Available $GRN_ARROW $(printf "\t") ${memavailable:-null}
-$greenpart ████      ████      ███      ███$end   Buffers $GRN_ARROW $(printf "\t\t") ${buffers:-null}
-$greenpart ████████████████████████████████$end   Cached $GRN_ARROW $(printf "\t\t") ${cached:-null}
-$greenpart ███   ████   █████   █████   ███$end   Swap Total $GRN_ARROW  $(printf "\t") ${swaptotal:-null}
-$yellowpart ███   ████   █████   █████   ███$end   Swap Free $GRN_ARROW  $(printf "\t") ${swapfree:-null}
-                                    Zswap $GRN_ARROW $(printf "\t\t") ${zswap:-null}
-                                    Zswapped $GRN_ARROW $(printf "\t") ${zswapped:-null}
-                                    Swap Cached $GRN_ARROW $(printf "\t") ${swapcached:-null}
-                                    Dirty $GRN_ARROW $(printf "\t\t") ${dirty:-null}
-                                    Kernel Stack $GRN_ARROW $(printf "\t") ${kernel_stack:-null}
-                                    Per CPU $GRN_ARROW $(printf "\t\t") ${per_cpu:-null}
-                                    HugePages Free $GRN_ARROW $(printf "\t") ${hugepg_free:-null}
-                                    HugePages Total $GRN_ARROW $(printf "\t") ${hugepg_total:-null}
+$GREEN_PART   ████████████████████████████     $HOST_AND_USER
+$GREEN_PART ████████████████████████████████$END   $(printf '%0.s-' $(seq 1 "$HOST_AND_USER_LEN"))
+$GREEN_PART ████      ████      ███      ███$END   RAM Total $GRN_ARROW $(printf "\t") ${MEM_TOTAL:-null}
+$GREEN_PART ████      ████      ███      ███$END   RAM Free $GRN_ARROW $(printf "\t") ${MEM_FREE:-null}
+$GREEN_PART ████      ████      ███      ███$END   RAM Available $GRN_ARROW $(printf "\t") ${MEM_AVAILABLE:-null}
+$GREEN_PART ████      ████      ███      ███$END   Buffers $GRN_ARROW $(printf "\t\t") ${BUFFERS:-null}
+$GREEN_PART ████████████████████████████████$END   Cached $GRN_ARROW $(printf "\t\t") ${CACHED:-null}
+$GREEN_PART ███   ████   █████   █████   ███$END   Swap Total $GRN_ARROW  $(printf "\t") ${SWAP_TOTAL:-null}
+$YELLOW_PART ███   ████   █████   █████   ███$END   Swap Free $GRN_ARROW  $(printf "\t") ${SWAP_FREE:-null}
+                                    Zswap $GRN_ARROW $(printf "\t\t") ${ZSWAP:-null}
+                                    Zswapped $GRN_ARROW $(printf "\t") ${ZSWAPPED:-null}
+                                    Swap Cached $GRN_ARROW $(printf "\t") ${SWAP_CACHED:-null}
+                                    Dirty $GRN_ARROW $(printf "\t\t") ${DIRTY:-null}
+                                    Kernel Stack $GRN_ARROW $(printf "\t") ${KERNEL_STACK:-null}
+                                    Per CPU $GRN_ARROW $(printf "\t\t") ${PER_CPU:-null}
+                                    HugePages Free $GRN_ARROW $(printf "\t") ${HUGEPAGES_FREE:-null}
+                                    HugePages Total $GRN_ARROW $(printf "\t") ${HUGEPAGES_TOTAL:-null}
 
-                                    $colorblocks
+                                    $COLORBLOCKS
 
 EOF
