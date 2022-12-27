@@ -9,7 +9,7 @@ install:
 	@test -f ./ramfetch || printf "\e[0;31m=>\e[0;m ramfetch file was not found (trying to find ramfetch file at ./ramfetch) aborting..\n" || exit 1
 	@printf "\e[0;34m=>\e[0;m install -Dm755 ramfetch/usr/local/bin/ramfetch\n"
 	@install -Dm755 ramfetch /usr/local/bin/ramfetch
-	@printf "\e[0;34m=>\e[0;m Thanks for installing ramfetch.\n"
+	@printf "\e[0;36m=>\e[0;m Thanks for installing ramfetch.\n"
 
 uninstall:
 	@printf "=> ramfetch version v1.0.1\n"
