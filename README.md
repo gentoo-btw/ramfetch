@@ -39,7 +39,6 @@ To install ramfetch from the AUR. install it by using your favorite AUR helper. 
 ```bash
 $ yay -S ramfetch-git
 ```
-<b>NOTE: The AUR version installs the stock version of ramfetch. not the christmas one. while the github method does.</b>
 
 ### Github
 Clone this repo.
@@ -51,6 +50,11 @@ Install ramfetch using `make install`.
 # make install
 ```
 
+### ramfetch christmas version
+Install the ramfetch christmas version using `install`
+```bash
+# install -Dm755 ramfetch4chirstmas /usr/local/bin/ramfetch
+```
 
 ### Manual install
 Install ramfetch using `install`
