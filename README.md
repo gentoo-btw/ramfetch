@@ -50,12 +50,6 @@ Install ramfetch using `make install`.
 # make install
 ```
 
-### ramfetch christmas version
-Install the ramfetch christmas version using `install`
-```bash
-# install -Dm755 ramfetch4chirstmas /usr/local/bin/ramfetch
-```
-
 ### Manual install
 Install ramfetch using `install`
 ```bash
