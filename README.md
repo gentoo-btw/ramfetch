@@ -15,7 +15,7 @@
 </div>
 <br>
 
-ramfetch is a fetch which displays memory info using /proc/meminfo. if you want to install ramfetch follow the steps below. it's really simple. you can also test ramfetch without installing it.
+ramfetch is a "fetch" tool which displays memory info using /proc/meminfo. if you want to install ramfetch follow the steps below. it's really simple. you can also test ramfetch without installing it.
 
 ramfetch works on:
 
