@@ -41,7 +41,7 @@ $ yay -S ramfetch-git
 ### Github
 Clone this repo.
 ```bash
-$ git clone https://github.com/gentoo-btw/ramfetch
+$ git clone https://github.com/o69mar/ramfetch
 ```
 Install ramfetch using `make install`.
 ```bash
