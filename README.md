@@ -24,13 +24,20 @@ ramfetch works on:
 &check; Android, using termux (no root)
 
 
-## Requirements
+## 1 - Requirements
 
 `bash` for ramfetch to work.
 
 `make` to install ramfetch. (optional)
 
-## Install
+
+## 2 - Install
+
+### Run with curl
+If you don't wanna install ramfetch/clone this repo. you can run it with curl.
+```ocmal
+$ https://raw.githubusercontent.com/o69mar/ramfetch/main/ramfetch
+```
 
 ### AUR
 To install ramfetch from the AUR. install it by using your favorite AUR helper. (e.g yay) thanks to [jahway603](https://github.com/jahway603)
@@ -40,40 +47,40 @@ $ yay -S ramfetch-git
 
 ### Github
 Clone this repo.
-```bash
+```ocaml
 $ git clone https://github.com/o69mar/ramfetch
 ```
 Install ramfetch using `make install`.
-```bash
+```ocmal
 # make install
 ```
 
 ### Manual install
 Install ramfetch using `install`
-```bash
+```ocmal
 # install -Dm755 ramfetch /usr/local/bin/ramfetch
 ```
 ## Reinstall
 Reinstall ramfetch using `make`.
-```bash
+```ocmal
 # make reinstall
 ```
 
 ### Manual Reinstall
 Remove ramfetch and install ramfetch using `install` and then execute it.
-```bash
+```ocmal
 # rm -f /usr/local/bin/ramfetch
 # install -Dm755 ramfetch /usr/local/bin/ramfetch
 $ ramfetch
 ```
 
-## Uninstall
+## 3 - Uninstall
 Uninstall ramfetch using `make`.
-```bash
+```ocmal
 # make uninstall
 ```
 ### Manual Uninstall
 Uninstall ramfetch by removing the ramfetch file.
-```bash
+```ocmal
 # rm -f /usr/local/bin/ramfetch
 ```
