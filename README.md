@@ -42,7 +42,7 @@ $ curl https://raw.githubusercontent.com/o69mar/ramfetch/main/ramfetch | sh
 ### AUR
 To install ramfetch from the AUR. install it by using your favorite AUR helper. (e.g. yay or paru) thanks to [jahway603](https://github.com/jahway603)
 ```ocaml
-$ yay -S ramfetch-git
+$ yay -S ramfetch
 ```
 ```ocaml
 $ paru -S ramfetch
