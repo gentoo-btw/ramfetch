@@ -26,7 +26,7 @@ ramfetch works on:
 
 ## Requirements
 
-`bash` for ramfetch to work.
+`sh` for ramfetch to work.
 
 `make` to install ramfetch. (optional)
 
