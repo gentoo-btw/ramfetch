@@ -26,7 +26,7 @@ ramfetch works on:
 
 ## Requirements
 
-`bash` for ramfetch to work.
+`sh` for ramfetch to work.
 
 `make` to install ramfetch. (optional)
 
@@ -40,9 +40,12 @@ $ curl https://raw.githubusercontent.com/o69mar/ramfetch/main/ramfetch | sh
 ```
 
 ### AUR
-To install ramfetch from the AUR. install it by using your favorite AUR helper. (e.g yay) thanks to [jahway603](https://github.com/jahway603)
+To install ramfetch from the AUR. install it by using your favorite AUR helper. (e.g. yay or paru) thanks to [jahway603](https://github.com/jahway603)
 ```bash
 $ yay -S ramfetch-git
+```
+```bash
+$ paru -S ramfetch
 ```
 
 ### Github
