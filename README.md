@@ -60,7 +60,7 @@ Install ramfetch using `install`
 ```ocmal
 # install -Dm755 ramfetch /usr/local/bin/ramfetch
 ```
-## Reinstall
+## 3 - Reinstall
 Reinstall ramfetch using `make`.
 ```ocmal
 # make reinstall
@@ -74,7 +74,7 @@ Remove ramfetch and install ramfetch using `install` and then execute it.
 $ ramfetch
 ```
 
-## 3 - Uninstall
+## 4 - Uninstall
 Uninstall ramfetch using `make`.
 ```ocmal
 # make uninstall
