@@ -24,14 +24,14 @@ ramfetch works on:
 &check; Android, using termux (no root)
 
 
-## 1 - Requirements
+## Requirements
 
 `bash` for ramfetch to work.
 
 `make` to install ramfetch. (optional)
 
 
-## 2 - Install
+## Install
 
 ### Run with curl
 If you don't wanna install ramfetch/clone this repo. you can run it with curl.
@@ -60,7 +60,7 @@ Install ramfetch using `install`
 ```ocmal
 # install -Dm755 ramfetch /usr/local/bin/ramfetch
 ```
-## 3 - Reinstall
+## Reinstall
 Reinstall ramfetch using `make`.
 ```ocmal
 # make reinstall
@@ -74,7 +74,7 @@ Remove ramfetch and install ramfetch using `install` and then execute it.
 $ ramfetch
 ```
 
-## 4 - Uninstall
+## Uninstall
 Uninstall ramfetch using `make`.
 ```ocmal
 # make uninstall
