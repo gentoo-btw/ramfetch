@@ -36,7 +36,7 @@ ramfetch works on:
 ### Run with curl
 If you don't wanna install ramfetch/clone this repo. you can run it with curl.
 ```ocmal
-$ https://raw.githubusercontent.com/o69mar/ramfetch/main/ramfetch
+$ curl https://raw.githubusercontent.com/o69mar/ramfetch/main/ramfetch | sh
 ```
 
 ### AUR
