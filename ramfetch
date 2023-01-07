@@ -111,7 +111,7 @@ done < /proc/meminfo
 
 # colorblocks/hostname, and the green arrow
 GRN_ARROW="$(printf "%b->%b" "${GRN}" "${WHT}")"
-HOSTNAME="$(hostname)"
+HOSTNAME="$(uname -n)"
 HOST_AND_USER_LEN=$(echo ${#HOSTNAME} + ${#USER} + 1 | bc)
 HOST_AND_USER="$(printf "%b%s%b%c%b%s%b" "${GRN}" "$USER" "${WHT}" "@" "${YEL}" "$HOSTNAME" "${WHT}")"
 COLORBLOCKS="$(printf "%b%s%b%s%b%s%b%s%b%s%b%s%b%s%b%s%b" "${BLK}" "███" "${RED}" "███" "${GRN}" "███" "${BLU}" "███" "${YEL}" "███" "${PURP}" "███" "${CYN}" "███" "${WHT}" "███" "${WHT}")"
