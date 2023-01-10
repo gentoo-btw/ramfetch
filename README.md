@@ -6,7 +6,7 @@
     <img src="https://shields.io/badge/made-with%20%20sh-green?style=flat-square&color=d5c4a1&labelColor=1d2021">
     <img src="https://img.shields.io/github/forks/gentoo-btw/ramfetch?style=flat-square">
     <img src="https://img.shields.io/github/stars/gentoo-btw/ramfetch?style=flat-square">
-    <img src="https://img.shields.io/aur/version/ramfetch-git?color=1793d1&logo=arch-linux&style=flat-square">
+    <img src="https://img.shields.io/aur/version/ramfetch?color=1793d1&logo=arch-linux&style=flat-square">
   </div>
   <div>
 <br>
