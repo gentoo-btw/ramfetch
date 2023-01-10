@@ -35,43 +35,43 @@ ramfetch works on:
 
 ### Run with curl
 If you don't wanna install ramfetch/clone this repo. you can run it with curl.
-```ocaml
+```bash
 $ curl https://raw.githubusercontent.com/o69mar/ramfetch/main/ramfetch | sh
 ```
 
 ### AUR
 To install ramfetch from the AUR. install it by using your favorite AUR helper. (e.g. yay or paru) thanks to [jahway603](https://github.com/jahway603)
-```ocaml
+```bash
 $ yay -S ramfetch
 ```
-```ocaml
+```bash
 $ paru -S ramfetch
 ```
 
 ### Github
 Clone this repo.
-```ocaml
+```bash
 $ git clone https://github.com/o69mar/ramfetch
 ```
 Install ramfetch using `make install`.
-```ocaml
+```bash
 # make install
 ```
 
 ### Manual install
 Install ramfetch using `install`
-```ocaml
+```bash
 # install -Dm755 ramfetch /usr/local/bin/ramfetch
 ```
 ## Reinstall
 Reinstall ramfetch using `make`.
-```ocaml
+```bash
 # make reinstall
 ```
 
 ### Manual Reinstall
 Remove ramfetch and install ramfetch using `install` and then execute it.
-```ocaml
+```bash
 # rm -f /usr/local/bin/ramfetch
 # install -Dm755 ramfetch /usr/local/bin/ramfetch
 $ ramfetch
@@ -79,11 +79,11 @@ $ ramfetch
 
 ## Uninstall
 Uninstall ramfetch using `make`.
-```ocaml
+```bash
 # make uninstall
 ```
 ### Manual Uninstall
 Uninstall ramfetch by removing the ramfetch file.
-```ocaml
+```bash
 # rm -f /usr/local/bin/ramfetch
 ```
