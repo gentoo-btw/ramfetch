@@ -40,7 +40,9 @@ $ curl https://raw.githubusercontent.com/o69mar/ramfetch/main/ramfetch | sh
 ```
 
 ### AUR
-To install ramfetch from the AUR. install it by using your favorite AUR helper. (e.g. yay or paru) thanks to [jahway603](https://github.com/jahway603)
+To install ramfetch from the AUR, install it by using your favorite AUR helper. (e.g. yay or paru) thanks to [jahway603](https://github.com/jahway603)
+
+The Arch AUR has `ramfetch` and `ramfetch-git` packages. The `ramfetch` AUR package builds the code from each [release](https://github.com/o69mar/ramfetch/releases) & the `-git` AUR package builds the code from this [git's main branch](https://github.com/o69mar/ramfetch). I wanted to give Archers a choice.
 ```bash
 # use yay
 $ yay -S ramfetch
